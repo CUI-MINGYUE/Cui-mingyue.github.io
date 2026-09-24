@@ -1,121 +1,176 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>2026/9/24测试</title>
-<link rel="shortcut icon" href="https://Hello4Cat.github.io/favicon.ico?v=1790234119197">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://Hello4Cat.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="2026/9/24测试 - Atom Feed" href="https://Hello4Cat.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mingyue Cui - Academic Homepage</title>
+<style>
+  :root { --brand:#0a4ea8; --text:#333; --muted:#777; --line:#eaeaea; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color:var(--text); background:#fafafa; line-height:1.6; font-size:14px; }
+  .wrap { max-width:820px; margin:0 auto; padding:40px 20px 60px; background:#fff; }
+  /* 顶部无导航，自然平铺 */
+  .profile { text-align:center; margin-bottom:30px; }
+  .profile h1 { font-size:24px; margin-bottom:5px; font-weight:600; }
+  .profile .pos { color:var(--muted); margin-bottom:15px; font-size:14px; }
+  .profile .avatar { width:140px; height:140px; border-radius:6px; background:#ddd; margin:0 auto 15px; display:flex; align-items:center; justify-content:center; color:#999; font-size:32px; overflow:hidden; }
+  .profile .avatar img { width:100%; height:100%; object-fit:cover; }
+  .contact { text-align:center; margin:15px 0 25px; line-height:1.8; font-size:13px; color:#444; }
+  .contact div { margin-bottom:2px; }
+  .intro { text-align:justify; margin-bottom:25px; font-size:14px; }
+  hr.line { border:0; border-top:1px solid var(--line); margin:25px 0; }
+  h2.section { font-size:18px; font-weight:600; margin:30px 0 12px; color:#222; }
+  /* Publications */
+  .pub-list { list-style:none; padding:0; }
+  .pub-list li { margin-bottom:16px; padding-left:22px; position:relative; font-size:13.5px; line-height:1.65; }
+  .pub-list .num { position:absolute; left:0; top:0; color:var(--muted); font-size:12px; }
+  .pub-list .me { color:var(--brand); font-weight:500; }
+  .pub-list .title { font-weight:500; }
+  .pub-list .venue { font-style:italic; color:#444; }
+  .pub-list .tags { margin-top:3px; }
+  .tag { display:inline-block; font-size:11px; padding:1px 5px; border-radius:3px; margin-right:4px; text-decoration:none; }
+  .tag-rank { background:#e8f5e9; color:#2e7d32; }
+  .tag-if { background:#e3f2fd; color:#1565c0; }
+  .tag-paper { background:#e3f2fd; color:#1565c0; text-decoration:underline; }
+  /* Education & Patent */
+  .edu-list, .patent-list, .award-list { list-style:none; padding:0; }
+  .edu-list li, .patent-list li, .award-list li { margin-bottom:10px; font-size:13.5px; padding-left:14px; position:relative; }
+  .edu-list li::before, .patent-list li::before, .award-list li::before { content:"•"; position:absolute; left:0; color:var(--muted); }
+  /* Projects */
+  .proj-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:10px; }
+  .proj-card { border:1px solid var(--line); border-radius:4px; padding:10px; text-align:center; }
+  .proj-card .thumb { width:100%; height:110px; background:#eee; border-radius:3px; margin-bottom:8px; display:flex; align-items:center; justify-content:center; color:#aaa; font-size:12px; overflow:hidden; }
+  .proj-card .thumb img { width:100%; height:100%; object-fit:cover; }
+  .proj-card p { font-size:13px; }
+  /* Showcase */
+  .showcase-img { width:100%; max-height:300px; background:#eee; border-radius:4px; margin:10px 0; display:flex; align-items:center; justify-content:center; color:#aaa; overflow:hidden; }
+  .showcase-img img { width:100%; height:100%; object-fit:cover; }
+  video { width:100%; max-height:280px; border-radius:4px; margin:10px 0; background:#000; }
+  footer { text-align:center; margin-top:40px; padding:20px; background:#222; color:#ccc; font-size:12px; }
+  @media (max-width:600px) {
+    .proj-grid { grid-template-columns:1fr; }
+  }
+  @media print {
+    body { background:#fff; }
+    .wrap { max-width:100%; padding:20px; }
+    footer { display:none; }
+    .tag-paper { text-decoration:underline; color:#000; background:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
 
-
-
-    <meta name="description" content="这里是网站描述部分" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://Hello4Cat.github.io">
-  <img class="avatar" src="https://Hello4Cat.github.io/images/avatar.png?v=1790234119197" alt="">
-  </a>
-  <h1 class="site-title">
-    2026/9/24测试
-  </h1>
-  <p class="site-description">
-    这里是网站描述部分
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://Hello4Cat.github.io/post/hello-gridea/">
-        <h2 class="post-title">Hello Gridea</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-12
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://Hello4Cat.github.io/tag/Tf9FCte955/" class="post-tag">
-            # Gridea
-          </a>
-        
-      </div>
-      
-        <a href="https://Hello4Cat.github.io/post/hello-gridea/" class="post-feature-image" style="background-image: url('https://Hello4Cat.github.io/post-images/hello-gridea.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-      </div>
-    </article>
-  
-</div>
-
-    
-        <div class="pagination-container">
-  
-  
-</div>
-
-    
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://Hello4Cat.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
+  <div class="profile">
+    <div class="avatar">MY</div>
+    <h1>Mingyue Cui</h1>
+    <div class="pos">Associate Researcher, School of Computer Science and Engineering, Sun Yat-sen University</div>
+    <div class="contact">
+      <div>Guangzhou, Guangdong, China</div>
+      <div>Phone: +86 13726211441</div>
+      <div>Email: cuimy5@mail.sysu.edu.cn</div>
     </div>
-  </body>
+    <div class="intro">
+      I am now an Associate Researcher in School of Computer Science and Engineering, Sun Yat-sen University (SYSU). Before that I got my Ph.D. degree in School of Computer Science and Engineering, Sun Yat-sen University (SYSU).
+    </div>
+  </div>
+
+  <hr class="line">
+  <h2 class="section">Research</h2>
+  <p class="intro">My research spans high-dimensional feature learning, sparse representation, and compressed sensing in signal processing; temporal data modeling and efficient neural architecture design in artificial intelligence; as well as intelligent sensing and system integration, and structured representation and reconstruction of 3D scenes in computer vision and industrial software, with a focus on their interdisciplinary applications.</p>
+
+  <hr class="line">
+  <h2 class="section">Publications</h2>
+  <ul class="pub-list">
+    <li>
+      <span class="num">[1]</span>
+      <span class="me">Mingyue Cui</span>, Yuyang Zhong, Mingjian Feng, Junhua Long, Jinhong Xia, Kai Huang*. "A Self-Attention-based LiDAR Point Cloud Compression Framework for Autonomous Driving Environments". <span class="venue">IEEE Transactions on Industrial Informatics (TII)</span>, 2026, 1-13. 
+      <span class="tags">
+        <span class="tag tag-rank">中科院一区</span>
+        <span class="tag tag-if">IF: 9.9</span>
+        <a href="papers/paper1.pdf" class="tag tag-paper">paper</a>
+      </span>
+    </li>
+    <li>
+      <span class="num">[2]</span>
+      <span class="me">Mingyue Cui</span>, Yewei Gan, Jiepeng Chen, Kai Zheng, Yanchong Xie, Daosong Hu, Yuning Cui, Kai Huang*. "A Frequency-Guided Denoising Framework Based on Convolutional Transformer for Electrocardiogram Signals". <span class="venue">Engineering Applications of Artificial Intelligence (EAAI)</span>, 2026. 
+      <span class="tags">
+        <span class="tag tag-rank">中科院一区</span>
+        <span class="tag tag-if">IF: 8</span>
+        <a href="papers/paper2.pdf" class="tag tag-paper">paper</a>
+      </span>
+    </li>
+    <li>
+      <span class="num">[3]</span>
+      Daosong Hu, Xi Li, <span class="me">Mingyue Cui*</span>, Kai Huang. "Net: Lightweight Network for Driver Attention Estimation via Scene and Gaze Consistency". <span class="venue">IEEE Transactions on Image Processing (TIP)</span>, 2026, 35:27-41. 
+      <span class="tags">
+        <span class="tag tag-rank">中科院一区</span>
+        <span class="tag tag-if">IF: 13.7</span>
+        <a href="papers/paper3.pdf" class="tag tag-paper">paper</a>
+      </span>
+    </li>
+    <!-- 照此结构继续添加 -->
+  </ul>
+
+  <hr class="line">
+  <h2 class="section">Education</h2>
+  <ul class="edu-list">
+    <li>Ph.D., Computer Science and Technology, Sun Yat-sen University, 09/2018 - 12/2022</li>
+    <li>Visiting Student, Technical University of Munich, 11/2021 - 11/2022</li>
+    <li>M.Sc., Software Engineering, Sun Yat-sen University, 09/2015 - 12/2017</li>
+  </ul>
+
+  <hr class="line">
+  <h2 class="section">Patent (authorized)</h2>
+  <ul class="patent-list">
+    <li>崔明月, 舒春节, 冯明健, 钟予阳, 郑嘉宇, 黄凯. 一种融合多尺度几何特征的双路径三维点云压缩重建方法, 2025.11.07, 中国, CN120912783A.</li>
+    <li>崔明月, 陶俊成, 钟予阳, 冯明健, 黄凯. 一种基于多级球八叉树和图驱动注意力熵模型的点云编码方法, 2024.11.22, 中国, CN119006620B.</li>
+  </ul>
+
+  <hr class="line">
+  <h2 class="section">Projects</h2>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="thumb"><img src="img/unmanned_car.jpg" alt="无人车"></div>
+      <p>无人车</p>
+    </div>
+    <div class="proj-card">
+      <div class="thumb"><img src="img/unmanned_ship.jpg" alt="水面无人船"></div>
+      <p>水面无人船</p>
+    </div>
+    <div class="proj-card">
+      <div class="thumb"><img src="img/fire_robot.jpg" alt="火灾救援麦克纳姆轮履带复式结构机器人"></div>
+      <p>火灾救援麦克纳姆轮履带复式结构机器人</p>
+    </div>
+    <div class="proj-card">
+      <div class="thumb"><img src="img/butterfly_robot.jpg" alt="仿蝴蝶扑翼飞行机器人"></div>
+      <p>仿蝴蝶扑翼飞行机器人</p>
+    </div>
+  </div>
+
+  <hr class="line">
+  <h2 class="section">Achievement Showcase</h2>
+  <div class="showcase-img"><img src="img/cctv_show.jpg" alt="心脏性猝死综合防治人工智能可穿戴预警设备"></div>
+  <p style="text-align:center;font-size:13px;color:#555;">CCTV-13对手术机器人的报道</p>
+  <video controls src="video/cctv_report.mp4"></video>
+
+  <hr class="line">
+  <h2 class="section">Awards/Honors</h2>
+  <ul class="award-list">
+    <li>2025 蓝计划大学生创新创新项目大赛广东赛区, 三等奖, 指导老师</li>
+    <li>2025 IWACI 会议, Best Presentation Award</li>
+    <li>2025 十八屆中山大学“赢在中大”优秀指导教师奖</li>
+    <li>2025 中山大学本科生校级优秀毕业论文, 指导老师</li>
+    <li>2025 第十七、十八届中山大学“赢在中大”创意组, 铜奖</li>
+    <li>2023 ICoSR 会议, Best Paper</li>
+    <li>2024 中山大学博士后创新创业大赛, 铜奖</li>
+  </ul>
+
+  <footer>
+    cuimingyue.github.io maintained by Cuimingyue<br>
+    Published with GitHub Pages
+  </footer>
+
+</div>
+</body>
 </html>
