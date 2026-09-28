@@ -146,27 +146,33 @@
             display: block;
         }
         
-        /* 网格图片布局 */
-        .grid-2 {
+        /* 【修正】网格图片布局 - 参考原运行者的固定高度方案，保证绝对对齐 */
+        .grid-4 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* 2x2 网格 */
+            gap: 18px;
             margin-top: 10px;
         }
         .grid-item {
             text-align: center;
+            background: #f8f9fa;
+            padding: 10px 10px 6px 10px;
+            border-radius: 6px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .grid-item img {
             width: 100%;
-            height: auto;
+            height: 160px; /* 强制固定高度 */
+            object-fit: cover; /* 裁剪图片以适应统一尺寸 */
             border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 6px;
         }
-        .caption {
-            margin-top: 15px;
+        .grid-item h4 {
+            margin: 0 0 2px;
             font-size: 0.95em;
-            color: #555;
-            font-weight: 500;
+            color: #333;
         }
         
         /* 页脚样式 */
@@ -181,7 +187,7 @@
         
         /* 小屏幕适配 */
         @media (max-width: 600px) {
-            .grid-2 {
+            .grid-4 {
                 grid-template-columns: 1fr;
             }
             .github-banner-content {
@@ -197,7 +203,6 @@
 <div class="github-banner">
     <div class="github-banner-content">
         <h2>cui-mingyue.github.io</h2>
-        <!-- 这里是你的新账号地址 -->
         <a href="https://github.com/CUI-MINGYUE/Cui-mingyue.github.io" class="github-btn" target="_blank">
             View on GitHub
             <svg height="20" width="20" viewBox="0 0 16 16">
@@ -208,11 +213,10 @@
 </div>
 
 <div class="container">
-    <!-- 头部信息（照片路径已修正为实际文件名） -->
     <h1>Mingyue Cui</h1>
+    
     <img src="./picture/cuimingyue2.png" alt="Mingyue Cui Graduation Photo" class="profile-img" style="max-width: 600px; margin-top: 10px;">
     
-    <!-- 简介 -->
     <p>I am now an Associate Researcher in School of Computer Science and Engineering, Sun Yat-sen University (SYSU). Before that I got my Ph.D. degree in <a href="https://cse.sysu.edu.cn/" target="_blank">School of Computer Science and Engineering, Sun Yat-sen University (SYSU)</a>.</p>
     
     <div class="contact-info">
@@ -221,11 +225,10 @@
         <p><strong>Email:</strong> cuimy5@mail.sysu.edu.cn</p>
     </div>
 
-    <!-- 研究领域 -->
     <h2 id="research">Research</h2>
     <p>My research spans high-dimensional feature learning, sparse representation, and compressed sensing in signal processing; temporal data modeling and efficient neural architecture design in artificial intelligence; as well as intelligent processing and system integration, and structured representation and reconstruction of 3D scenes in computer vision and industrial software, with a focus on their interdisciplinary applications.</p>
 
-    <!-- 发表论文（已全部修正为你本地的相对路径） -->
+    <!-- 发表论文（严格对应你的本地文件路径） -->
     <h2 id="publication">Publication</h2>
     <ul>
         <li><strong>Mingyue Cui</strong>, Yuyang Zhong, Mingjian Feng, Junhua Long, Jinhong Xia, Kai Huang*. A Self-Attention-Based LiDAR Point Cloud Compression Framework in Autonomous Driving Environments[J]. <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2026, 1-13. (中科院一区, IF：9.9, <a href="./paper/none.pdf" target="_blank">paper</a>)</li>
@@ -264,7 +267,6 @@
         <li>Long Chen, <strong>Mingyue Cui</strong>, Feihu Zhang, Biao Hu, Kai Huang*. High-Speed Scene Flow on Embedded Commercial Off-the-Shelf Systems. <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2019, 15(4):1843-1852. (<a href="./paper/4-TII-2019.pdf" target="_blank">paper</a>)</li>
     </ul>
 
-    <!-- 教育经历 -->
     <h2 id="education">Education</h2>
     <ul>
         <li>Ph.D., Computer Science and Technology, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, 09/2018 - 12/2022</li>
@@ -272,7 +274,6 @@
         <li>M.Sc., Software Engineering, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, 09/2015 - 12/2017</li>
     </ul>
 
-    <!-- 授权专利 -->
     <h2 id="patent">Patent (authorized)</h2>
     <ul>
         <li>崔明月, 舒春节, 冯明健, 钟予阳, 郑鑫宇, 黄凯. 一种融合多尺度几何特征的双路径三维点云压缩重建方法, 2025.11.07, 中国, CN120912783A.</li>
@@ -283,7 +284,7 @@
         <li>黄凯, 崔明月, 吴成昊, 刘云超, 王博, 罗宇翔. 一种基于三维激光雷达传感器的端到端点云数据压缩方法, 2021.08.06, 中国, CN113219493A.</li>
     </ul>
 
-    <!-- 成果展示（修正了视频和图片路径，指向实际本地文件） -->
+    <!-- 【修正】成果展示：参考原运行者的代码，采用固定高度 grid 对齐 -->
     <h2 id="achievement">Achievement Showcase</h2>
     
     <div class="showcase-container">
@@ -310,28 +311,28 @@
         </div>
 
         <div class="showcase-card">
-            <div class="grid-2">
+            <!-- 使用新定义的 grid-4 与 grid-item 类 -->
+            <div class="grid-4">
                 <div class="grid-item">
                     <img src="./picture/无人车动图.gif" alt="无人车">
-                    <div class="caption">无人车</div>
+                    <h4>无人车</h4>
                 </div>
                 <div class="grid-item">
                     <img src="./picture/无人船动图.gif" alt="水面无人船">
-                    <div class="caption">水面无人船</div>
+                    <h4>水面无人船</h4>
                 </div>
                 <div class="grid-item">
                     <img src="./picture/工业机器人.jpg" alt="火灾救援麦克纳姆轮-履带复式结构机器人">
-                    <div class="caption">火灾救援麦克纳姆轮-履带复式结构机器人</div>
+                    <h4>火灾救援麦克纳姆轮-履带复式结构机器人</h4>
                 </div>
                 <div class="grid-item">
                     <img src="./picture/仿生蝴蝶机器人.jpg" alt="仿蝴蝶扑翼飞行机器人">
-                    <div class="caption">仿蝴蝶扑翼飞行机器人</div>
+                    <h4>仿蝴蝶扑翼飞行机器人</h4>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 荣誉奖项 -->
     <h2 id="awards">Awards/Honors</h2>
     <ul>
         <li>2025 蓝计划大学生创意创新项目大赛广东赛区, 三等奖, 指导老师</li>
@@ -351,7 +352,6 @@
         <li>2019 国际智能机器人大赛, 一等奖</li>
     </ul>
 
-    <!-- 页脚（修正为新账号） -->
     <footer>
         <p>cui-mingyue.github.io maintained by <a href="https://github.com/CUI-MINGYUE" target="_blank">CUI-MINGYUE</a></p>
         <p>Published with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
