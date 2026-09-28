@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mingyue Cui</title>
     <style>
+        /* 开启平滑滚动，让锚点跳转更丝滑 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
@@ -57,6 +62,27 @@
         .github-btn svg {
             margin-left: 8px;
             fill: #fff;
+        }
+
+        /* 【新增】顶部索引导航栏样式 */
+        .sub-nav {
+            background-color: #fff;
+            border-bottom: 1px solid #eaecef;
+            text-align: center;
+            padding: 12px 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .sub-nav a {
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 0.95em;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .sub-nav a:hover {
+            color: #0366d6;
+            text-decoration: none;
         }
 
         /* 主体内容区域 */
@@ -146,10 +172,10 @@
             display: block;
         }
         
-        /* 【修正】网格图片布局 - 参考原运行者的固定高度方案，保证绝对对齐 */
+        /* 网格图片布局 */
         .grid-4 {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2x2 网格 */
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
             margin-top: 10px;
         }
@@ -164,8 +190,8 @@
         }
         .grid-item img {
             width: 100%;
-            height: 160px; /* 强制固定高度 */
-            object-fit: cover; /* 裁剪图片以适应统一尺寸 */
+            height: 160px;
+            object-fit: cover;
             border-radius: 4px;
             margin-bottom: 6px;
         }
@@ -194,6 +220,10 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+            .sub-nav a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
         }
     </style>
 </head>
@@ -212,6 +242,16 @@
     </div>
 </div>
 
+<!-- 【新增】索引导航栏 -->
+<div class="sub-nav">
+    <a href="#research">Research</a>
+    <a href="#publication">Publication</a>
+    <a href="#education">Education</a>
+    <a href="#patent">Patent</a>
+    <a href="#achievement">Showcase</a>
+    <a href="#awards">Awards</a>
+</div>
+
 <div class="container">
     <h1>Mingyue Cui</h1>
     
@@ -225,10 +265,11 @@
         <p><strong>Email:</strong> cuimy5@mail.sysu.edu.cn</p>
     </div>
 
+    <!-- 对应导航：Research -->
     <h2 id="research">Research</h2>
     <p>My research spans high-dimensional feature learning, sparse representation, and compressed sensing in signal processing; temporal data modeling and efficient neural architecture design in artificial intelligence; as well as intelligent processing and system integration, and structured representation and reconstruction of 3D scenes in computer vision and industrial software, with a focus on their interdisciplinary applications.</p>
 
-    <!-- 发表论文（严格对应你的本地文件路径） -->
+    <!-- 对应导航：Publication -->
     <h2 id="publication">Publication</h2>
     <ul>
         <li><strong>Mingyue Cui</strong>, Yuyang Zhong, Mingjian Feng, Junhua Long, Jinhong Xia, Kai Huang*. A Self-Attention-Based LiDAR Point Cloud Compression Framework in Autonomous Driving Environments[J]. <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2026, 1-13. (中科院一区, IF：9.9, <a href="./paper/none.pdf" target="_blank">paper</a>)</li>
@@ -267,6 +308,7 @@
         <li>Long Chen, <strong>Mingyue Cui</strong>, Feihu Zhang, Biao Hu, Kai Huang*. High-Speed Scene Flow on Embedded Commercial Off-the-Shelf Systems. <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2019, 15(4):1843-1852. (<a href="./paper/4-TII-2019.pdf" target="_blank">paper</a>)</li>
     </ul>
 
+    <!-- 对应导航：Education -->
     <h2 id="education">Education</h2>
     <ul>
         <li>Ph.D., Computer Science and Technology, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, 09/2018 - 12/2022</li>
@@ -274,6 +316,7 @@
         <li>M.Sc., Software Engineering, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, 09/2015 - 12/2017</li>
     </ul>
 
+    <!-- 对应导航：Patent -->
     <h2 id="patent">Patent (authorized)</h2>
     <ul>
         <li>崔明月, 舒春节, 冯明健, 钟予阳, 郑鑫宇, 黄凯. 一种融合多尺度几何特征的双路径三维点云压缩重建方法, 2025.11.07, 中国, CN120912783A.</li>
@@ -284,7 +327,7 @@
         <li>黄凯, 崔明月, 吴成昊, 刘云超, 王博, 罗宇翔. 一种基于三维激光雷达传感器的端到端点云数据压缩方法, 2021.08.06, 中国, CN113219493A.</li>
     </ul>
 
-    <!-- 【修正】成果展示：参考原运行者的代码，采用固定高度 grid 对齐 -->
+    <!-- 对应导航：Showcase -->
     <h2 id="achievement">Achievement Showcase</h2>
     
     <div class="showcase-container">
@@ -311,7 +354,6 @@
         </div>
 
         <div class="showcase-card">
-            <!-- 使用新定义的 grid-4 与 grid-item 类 -->
             <div class="grid-4">
                 <div class="grid-item">
                     <img src="./picture/无人车动图.gif" alt="无人车">
@@ -333,6 +375,7 @@
         </div>
     </div>
 
+    <!-- 对应导航：Awards -->
     <h2 id="awards">Awards/Honors</h2>
     <ul>
         <li>2025 蓝计划大学生创意创新项目大赛广东赛区, 三等奖, 指导老师</li>
