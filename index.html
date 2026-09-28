@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mingyue Cui</title>
     <style>
-        /* 开启平滑滚动，让锚点跳转更丝滑 */
+        /* 开启平滑滚动 */
         html {
             scroll-behavior: smooth;
+            /* 防止手机端出现横向滚动条 */
+            overflow-x: hidden;
         }
         
         body {
@@ -18,6 +20,7 @@
             margin: 0;
             padding: 0;
             background-color: #f6f8fa;
+            overflow-x: hidden; /* 防止横向溢出 */
         }
         
         /* 顶部深色 GitHub 横幅 */
@@ -64,7 +67,7 @@
             fill: #fff;
         }
 
-        /* 【新增】顶部索引导航栏样式 */
+        /* 索引导航栏样式 */
         .sub-nav {
             background-color: #fff;
             border-bottom: 1px solid #eaecef;
@@ -92,6 +95,7 @@
             padding: 20px 20px 60px 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.03);
+            box-sizing: border-box;
         }
         
         h1 {
@@ -125,6 +129,8 @@
         li {
             margin-bottom: 15px;
             text-align: justify;
+            /* 防止论文标题等长英文单词或URL撑爆屏幕 */
+            word-break: break-word;
         }
         .profile-img {
             display: block;
@@ -211,18 +217,87 @@
             color: #666;
         }
         
-        /* 小屏幕适配 */
-        @media (max-width: 600px) {
-            .grid-4 {
-                grid-template-columns: 1fr;
+        /* =========================================
+           【重点优化】移动端适配代码
+           针对手机屏幕（宽度小于 768px）进行全面优化
+           ========================================= */
+        @media (max-width: 768px) {
+            /* 1. 顶部横幅居中显示 */
+            .github-banner {
+                padding: 20px 15px;
+                text-align: center;
             }
             .github-banner-content {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                gap: 15px;
+            }
+            .github-banner h2 {
+                font-size: 1.5em; /* 缩小字号 */
+                word-break: break-all; /* 防止域名过长撑爆 */
+            }
+            .github-btn {
+                width: 100%; /* 按钮满宽，方便点击 */
+                justify-content: center;
+                padding: 12px;
+                box-sizing: border-box;
+            }
+
+            /* 2. 索引导航优化 */
+            .sub-nav {
+                padding: 10px 5px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
             }
             .sub-nav a {
-                display: inline-block;
-                margin: 5px 10px;
+                margin: 0; /* 清除左右边距，由 gap 控制 */
+                font-size: 0.9em;
+                padding: 5px 10px;
+                background: #f6f8fa;
+                border-radius: 4px;
+            }
+
+            /* 3. 内容容器缩紧 */
+            .container {
+                padding: 15px 15px 40px 15px;
+                box-shadow: none; /* 手机上取消阴影，显得更清爽 */
+            }
+
+            /* 4. 字体与排版优化（解决阅读糟糕的核心） */
+            h1 {
+                font-size: 1.8em;
+                text-align: center;
+            }
+            h2 {
+                font-size: 1.4em;
+                margin-top: 30px;
+            }
+            p, li {
+                font-size: 0.95em;
+                /* 手机端取消两端对齐！否则文字间距会非常大，极难阅读 */
+                text-align: left; 
+                line-height: 1.7;
+            }
+
+            /* 5. 图片自适应优化（覆盖内联的 max-width: 600px） */
+            .profile-img {
+                width: 100% !important; /* 强制满宽 */
+                max-width: 100% !important;
+                margin: 15px auto;
+            }
+
+            /* 6. 成果展示网格单列显示 */
+            .grid-4 {
+                grid-template-columns: 1fr; /* 手机端单列，图片更大 */
+                gap: 15px;
+            }
+            .grid-item img {
+                height: 180px; /* 单列时稍微增加图片高度 */
+            }
+            .showcase-card {
+                padding: 15px 10px;
             }
         }
     </style>
@@ -242,7 +317,7 @@
     </div>
 </div>
 
-<!-- 【新增】索引导航栏 -->
+<!-- 索引导航栏 -->
 <div class="sub-nav">
     <a href="#research">Research</a>
     <a href="#publication">Publication</a>
@@ -265,11 +340,9 @@
         <p><strong>Email:</strong> cuimy5@mail.sysu.edu.cn</p>
     </div>
 
-    <!-- 对应导航：Research -->
     <h2 id="research">Research</h2>
     <p>My research spans high-dimensional feature learning, sparse representation, and compressed sensing in signal processing; temporal data modeling and efficient neural architecture design in artificial intelligence; as well as intelligent processing and system integration, and structured representation and reconstruction of 3D scenes in computer vision and industrial software, with a focus on their interdisciplinary applications.</p>
 
-    <!-- 对应导航：Publication -->
     <h2 id="publication">Publication</h2>
     <ul>
         <li><strong>Mingyue Cui</strong>, Yuyang Zhong, Mingjian Feng, Junhua Long, Jinhong Xia, Kai Huang*. A Self-Attention-Based LiDAR Point Cloud Compression Framework in Autonomous Driving Environments[J]. <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2026, 1-13. (中科院一区, IF：9.9, <a href="./paper/none.pdf" target="_blank">paper</a>)</li>
@@ -308,7 +381,6 @@
         <li>Long Chen, <strong>Mingyue Cui</strong>, Feihu Zhang, Biao Hu, Kai Huang*. High-Speed Scene Flow on Embedded Commercial Off-the-Shelf Systems. <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2019, 15(4):1843-1852. (<a href="./paper/4-TII-2019.pdf" target="_blank">paper</a>)</li>
     </ul>
 
-    <!-- 对应导航：Education -->
     <h2 id="education">Education</h2>
     <ul>
         <li>Ph.D., Computer Science and Technology, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, 09/2018 - 12/2022</li>
@@ -316,7 +388,6 @@
         <li>M.Sc., Software Engineering, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, 09/2015 - 12/2017</li>
     </ul>
 
-    <!-- 对应导航：Patent -->
     <h2 id="patent">Patent (authorized)</h2>
     <ul>
         <li>崔明月, 舒春节, 冯明健, 钟予阳, 郑鑫宇, 黄凯. 一种融合多尺度几何特征的双路径三维点云压缩重建方法, 2025.11.07, 中国, CN120912783A.</li>
@@ -327,7 +398,6 @@
         <li>黄凯, 崔明月, 吴成昊, 刘云超, 王博, 罗宇翔. 一种基于三维激光雷达传感器的端到端点云数据压缩方法, 2021.08.06, 中国, CN113219493A.</li>
     </ul>
 
-    <!-- 对应导航：Showcase -->
     <h2 id="achievement">Achievement Showcase</h2>
     
     <div class="showcase-container">
@@ -375,7 +445,6 @@
         </div>
     </div>
 
-    <!-- 对应导航：Awards -->
     <h2 id="awards">Awards/Honors</h2>
     <ul>
         <li>2025 蓝计划大学生创意创新项目大赛广东赛区, 三等奖, 指导老师</li>
